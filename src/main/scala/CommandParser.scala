@@ -12,7 +12,7 @@ trait CommandParser {
     case "lte"       => _ <= operand
     case "gt"        => _ >  operand
     case "gte"       => _ >= operand
-    case "like"      => _.matches(operand)
+    case "like" | "~"  => _.matches(operand)
   }
 
   def condNum(symbol: String, operand: BigDecimal): BigDecimal => Boolean = symbol match {
