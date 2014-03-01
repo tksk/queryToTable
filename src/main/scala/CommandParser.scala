@@ -72,7 +72,7 @@ trait CommandParser {
       |      lte  : less than equal
       |      gt   : greater than
       |      gte  : greater than equal
-      |      like : regular expression (String only)
+      |      like   | ~  : regular expression (String only)
     """.stripMargin)
     help("help") text("prints this usage text")
   }

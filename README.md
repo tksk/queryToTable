@@ -23,7 +23,7 @@ Usage: qutie [options] <file> or <url>
         document encoding (file only)
   -ti <value> | --table-id <value>
         table ID
-  -se <value> | --skip-empty <value>
+  -se <value> | --skip-empty
         skip epmty line
   <file> or <url>
         input file or URL
@@ -35,7 +35,7 @@ Usage: qutie [options] <file> or <url>
       lte  : less than equal
       gt   : greater than
       gte  : greater than equal
-      like : regular expression (String only)
+      like   | ~  : regular expression (String only)
 
   --help
         prints this usage text
