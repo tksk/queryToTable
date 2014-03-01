@@ -9,7 +9,7 @@ usage
 QueryTo<table> 1.0
 Usage: qutie [options] <file> or <url>
 
-  -s <incices> | --select <incices>
+  -s <indices> | --select <indices>
         comma separated field indices(0-origin)
   -w:<index>:<ope>=<value> | --where:<index>:<ope>=<value>
         String field filter

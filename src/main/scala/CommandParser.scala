@@ -30,7 +30,7 @@ trait CommandParser {
     head("QueryTo<table>", "1.0")
     opt[String]('s', "select") required() action { (v, c) =>
       c.copy(fields = v.split(",").map(_.trim.toInt))
-    } text("comma separated field indices(0-origin)") valueName("<incices>")
+    } text("comma separated field indices(0-origin)") valueName("<indices>")
     opt[(String, String)]('w', "where") unbounded() action {
       case ((WherePattern(i, symbol), v), c) =>
       // -w:1:lt=hoge
