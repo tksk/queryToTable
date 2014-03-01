@@ -36,7 +36,7 @@ trait CommandParser {
       // -w:1:lt=hoge
       val cond = condStr(symbol, v)
       val func = (seq: Seq[String]) => cond(seq(i.toInt))
-      c.copy(conds = func :: c.conds)
+      c.copy(conds = c.conds :+ func)
     } keyValueName("<index>:<ope>", "<value>") text("String field filter")
     opt[(String, BigDecimal)]('e', "nwhere") unbounded() action {
       case ((WherePattern(i, symbol), v), c) =>
