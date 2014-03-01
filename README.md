@@ -1,4 +1,4 @@
-queryToTable
+qutie
 ============
 
 Query to &lt;table>

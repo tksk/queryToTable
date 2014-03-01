@@ -2,7 +2,7 @@ import AssemblyKeys._
 
 assemblySettings
 
-name := "queryToTable"
+name := "qutie"
 
 version := "0.1.0"
 
@@ -15,4 +15,4 @@ libraryDependencies ++= Seq(
   , "org.jsoup" % "jsoup" % "1.7.3"
 )
 
-//jarName in assembly := "qutie.jar"
+packageArchetype.java_application
