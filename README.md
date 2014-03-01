@@ -3,6 +3,9 @@ queryToTable
 
 Query to &lt;table>
 
+usage
+----------
+```
 QueryTo<table> 1.0
 Usage: qutie [options] <file> or <url>
 
@@ -36,3 +39,4 @@ Usage: qutie [options] <file> or <url>
 
   --help
         prints this usage text
+```
