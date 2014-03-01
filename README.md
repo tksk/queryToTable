@@ -46,7 +46,7 @@ examples
 
 ```
 # query to the results of Honolulu Marathon 2013
-$ java -jar queryToTable-assembly.jar http://www.pseresults.com/events/568/results -se \
+$ qutie http://www.pseresults.com/events/568/results -se \
   -s "1,2,4,5,7" -w:1:~="\d+" -e:1:gt=10000 --indexed
 "1","25742","2:23:20","Tsukamoto","Shuji","JPN"
 "2","25767","2:31:13","Hino","Yuya","JPN"
