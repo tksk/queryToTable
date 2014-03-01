@@ -59,7 +59,7 @@ trait CommandParser {
     } text("table ID")
     opt[String]("skip-empty") abbr("se") action { (v, c) =>
       val func = (seq: Seq[String]) => seq.length != 0
-      c.copy(conds = func :: c.conds)
+      c.copy(conds = func +: c.conds)
     } text("skip epmty line")
     arg[String]("<file> or <url>") action { (v, c) =>
       c.copy(args = c.args :+ v)
