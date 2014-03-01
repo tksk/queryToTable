@@ -9,7 +9,7 @@ object QueryToTable extends App with CommandParser {
   parser.parse(args, Config()) map { config =>
     val doc = {
       val target = config.args(0)
-      if(target.matches("^https?:.*")) {
+      if(target.matches("^https?://.*")) {
         Jsoup.connect(config.args(0)).get
       } else {
         val file = new java.io.File(config.args(0))
