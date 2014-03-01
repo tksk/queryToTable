@@ -1,5 +1,5 @@
 
-package org.tksk.queryToTable
+package org.tksk.qutie
 
 import org.jsoup._
 
