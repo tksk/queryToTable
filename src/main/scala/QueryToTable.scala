@@ -44,8 +44,8 @@ object QueryToTable extends App with CommandParser {
   }
 }
 
-case class Config(foo: Int = 1, fields: Seq[Int] = Seq(),
+case class Config(args: Seq[String] = Seq(), fields: Seq[Int] = Seq(),
   conds: List[Seq[String] => Boolean] = Nil,
   indexed: Boolean = false, encoding: Option[String] = None,
-  tableId: Option[String] = None, args: Seq[String] = Seq(),
+  tableId: Option[String] = None,
   heading: Boolean = false)
