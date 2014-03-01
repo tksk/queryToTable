@@ -69,9 +69,9 @@ trait CommandParser {
       |      (null) | eq : equal
       |      ne     | !  : not equal
       |      lt   : less than
-      |      lte  : less than equal
+      |      lte  : less than or equal
       |      gt   : greater than
-      |      gte  : greater than equal
+      |      gte  : greater than or equal
       |      like   | ~  : regular expression (String only)
     """.stripMargin)
     help("help") text("prints this usage text")

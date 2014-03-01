@@ -32,9 +32,9 @@ Usage: qutie [options] <file> or <url>
       (null) | eq : equal
       ne     | !  : not equal
       lt   : less than
-      lte  : less than equal
+      lte  : less than or equal
       gt   : greater than
-      gte  : greater than equal
+      gte  : greater than or equal
       like   | ~  : regular expression (String only)
 
   --help
