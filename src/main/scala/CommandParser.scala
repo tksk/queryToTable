@@ -45,10 +45,10 @@ trait CommandParser {
       val func = (seq: Seq[String]) => cond(BigDecimal(seq(i.toInt)))
       c.copy(conds = c.conds :+ func)
     } keyValueName("<index>:<ope>", "<value>") text("Number field filter")
-    opt[Unit]('i', "indexed") action { (v, c) =>
+    opt[Unit]('i', "indexed") action { (_, c) =>
       c.copy(indexed = true)
     } text("prepend an index column")
-    opt[Unit]("head") action { (v, c) =>
+    opt[Unit]("head") action { (_, c) =>
       c.copy(heading = true)
     } text("show only 10 rows.")
     opt[String]("encoding") action { (v, c) =>
@@ -57,7 +57,7 @@ trait CommandParser {
     opt[String]("table-id") abbr("ti") action { (v, c) =>
       c.copy(tableId = Some(v))
     } text("table ID")
-    opt[String]("skip-empty") abbr("se") action { (v, c) =>
+    opt[Unit]("skip-empty") abbr("se") action { (_, c) =>
       val func = (seq: Seq[String]) => seq.length != 0
       c.copy(conds = func +: c.conds)
     } text("skip epmty line")
