@@ -23,6 +23,8 @@ Usage: qutie [options] <file> or <url>
         document encoding (file only)
   -ti <value> | --table-id <value>
         table ID
+  -ts <value> | --table-selector <value>
+        table selector; see: http://jsoup.org/cookbook/extracting-data/selector-syntax
   -se | --skip-empty
         skip epmty line
   <file> or <url>

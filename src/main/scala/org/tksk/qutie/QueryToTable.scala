@@ -18,14 +18,7 @@ object QueryToTable extends App with CommandParser {
       }
     }
 
-    val IdAsIndex = """^(\d+)$""".r
-    val tableSelector = config.tableId match {
-      case None => "table"
-      case Some(IdAsIndex(index)) => s"table:eq(${index})"
-      case Some(id) => s"table#${id}"
-    }
-
-    val table = doc.select(tableSelector)
+    val table = doc.select(config.tableSelector.getOrElse("table"))
     val tdsItor = for {
       tr <- table.select("tr").asScala
       tds = tr.select("td").asScala.map(_.text)
@@ -47,5 +40,5 @@ object QueryToTable extends App with CommandParser {
 case class Config(args: Seq[String] = Seq(), fields: Seq[Int] = Seq(),
   conds: Seq[Seq[String] => Boolean] = Seq(),
   indexed: Boolean = false, encoding: Option[String] = None,
-  tableId: Option[String] = None,
+  tableSelector: Option[String] = None,
   heading: Boolean = false)

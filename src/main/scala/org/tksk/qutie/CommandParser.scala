@@ -55,8 +55,13 @@ trait CommandParser {
       c.copy(encoding = Some(v))
     } text("document encoding (file only)")
     opt[String]("table-id") abbr("ti") action { (v, c) =>
-      c.copy(tableId = Some(v))
+      val selector = if(v.matches("""\d+"""))  s"table:eq(${v})"
+                     else s"table#${v}"
+      c.copy(tableSelector = Some(selector))
     } text("table ID")
+    opt[String]("table-selector") abbr("ts") action { (v, c) =>
+      c.copy(tableSelector = Some(v))
+    } text("table selector; see: http://jsoup.org/cookbook/extracting-data/selector-syntax")
     opt[Unit]("skip-empty") abbr("se") action { (_, c) =>
       val func = (seq: Seq[String]) => seq.length != 0
       c.copy(conds = func +: c.conds)
